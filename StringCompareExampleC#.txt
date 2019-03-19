@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace StringCompareExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            WriteLine("Each line you enter will be "
+                + "added to a sentence until you "
+                + "enter EXIT OR QUIT");
+
+            string sentence = "";
+            for (; ; )
+            {
+                WriteLine("Enter a string ");
+                string line = ReadLine();
+
+                string[] terms = { "EXIT", "exit", "QUIT", "quit" };
+
+                bool quitting = false;
+
+                foreach (string term in terms)
+                {
+                    if (String.Compare(line, term) == 0)
+                    {
+                        quitting = true;
+                    }
+                }
+                if (quitting == true)
+                {
+                    break;
+                }
+                sentence = String.Concat(sentence, line);
+
+                WriteLine("\nyou've entered: " + sentence);
+            }   
+                    WriteLine("\ntotal sentence:\n" + sentence);
+                    WriteLine("Press Enter to terminate...");
+                    Read();
+                
+            
+        }
+    }
+}

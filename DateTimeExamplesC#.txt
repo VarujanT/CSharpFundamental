@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DateTimeExamples
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Calculates and tells you if the chosen year is a leap year
+            DateTime thisYear = new DateTime(2011, 1, 1);
+            bool isLeapYear = DateTime.IsLeapYear(thisYear.Year);
+
+            //Captures the present date and time (through the Now property) and then adds an hour to it
+            DateTime thisMoment = DateTime.Now;
+            DateTime anHourFromNow = thisMoment.AddHours(1);
+
+            //Tells you what day of the week it is
+            int year = DateTime.Now.Year;
+            DayOfWeek dayOfWeek = DateTime.Now.DayOfWeek;
+
+            DateTime date = DateTime.Today; //Get just the date part
+            TimeSpan time = thisMoment.TimeOfDay; //Get just the time part
+            TimeSpan duration = new TimeSpan(3, 0, 0, 0); //Specify length in days
+            DateTime threeDaysFromNow = thisMoment.Add(duration);
+
+        }
+    }
+}
