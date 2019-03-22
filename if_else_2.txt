@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace if_else_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int a = int.Parse(ReadLine());
+            int b = int.Parse(ReadLine());
+            int c = int.Parse(ReadLine());
+            if (a>b && a>c)
+            {
+                WriteLine("max=" + a);
+            
+            }
+            else if (b>a && b>c)
+            {
+                WriteLine("max=" + b);
+
+            }   
+            else if (c>a && c>b)
+            {
+                WriteLine("max=" + c);
+            }
+            else
+            {
+                WriteLine("Enter Havasar en=" + a);
+            }
+        }
+    }
+}
